@@ -3,18 +3,19 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
+import { AtmProfileComponent } from "../atm-profile/atm-profile.component";
 
 @Component({
   selector: 'app-post-login',
   template: `
     <div class="post-login-container">
-    <h1>{{this.cardNumber}}</h1>
+    <app-atm-profile></app-atm-profile>
     <button (click)="logout()">Logout</button>
     </div>
   `,
   styleUrls: ['./post-login.component.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, AtmProfileComponent]
 })
 export class PostLoginComponent {
   private authService: AuthService = inject(AuthService);
