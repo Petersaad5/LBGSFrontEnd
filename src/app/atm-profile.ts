@@ -5,5 +5,5 @@ export interface AtmProfile {
 	accountId : number,
 	accountNumber : number,
 	balance : number,
-	cardNumber : number,
+	cardNumber : string,
 }
