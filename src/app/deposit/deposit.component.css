@@ -1,0 +1,92 @@
+/* deposit.component.css */
+
+section {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 40px 20px;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: all var(--transition-duration);
+  }
+  
+  h1 {
+	color: var(--primary-color);
+	margin-bottom: 20px;
+	font-size: 2em;
+  }
+  
+  p {
+	font-size: 1.2em;
+	color: var(--text-color);
+  }
+  
+  p strong {
+	color: var(--primary-color);
+  }
+  
+  input[type="number"] {
+	width: 100%;
+	padding: 10px;
+	margin: 20px 0;
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	font-size: 1.2em;
+	transition: border-color var(--transition-duration);
+  }
+  
+  input[type="number"]:focus {
+	border-color: var(--secondary-color);
+  }
+  
+  button {
+	background-color: var(--primary-color);
+	color: var(--accent-color);
+	border: none;
+	padding: 15px 30px;
+	font-size: 1.2em;
+	margin: 10px 0;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: background-color var(--transition-duration), transform var(--transition-duration);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+	background-color: var(--secondary-color);
+	transform: scale(1.05);
+  }
+  
+  h2 {
+	margin-top: 20px;
+	font-size: 1.5em;
+	color: var(--text-color);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	section {
+	  padding: 20px 10px;
+	}
+  
+	h1 {
+	  font-size: 1.5em;
+	}
+  
+	input[type="number"] {
+	  padding: 10px;
+	  font-size: 1em;
+	}
+  
+	button {
+	  width: 100%;
+	  padding: 15px;
+	  font-size: 1em;
+	}
+  
+	h2 {
+	  font-size: 1.2em;
+	}
+  }
+  

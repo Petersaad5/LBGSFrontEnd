@@ -8,14 +8,14 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   template: `
-    <div>
+    <div class="login-container">
       <h2>Login</h2>
-      <form (ngSubmit)="login()"> <!-- form done better in the homes-app  -->
-        <div>
+      <form (ngSubmit)="login()">
+        <div class="form-group">
           <label for="cardNumber">Card Number:</label>
           <input type="text" id="cardNumber" [(ngModel)]="cardNumber" name="cardNumber" required>
         </div>
-        <div>
+        <div class="form-group">
           <label for="csv">CSV:</label>
           <input type="number" id="csv" [(ngModel)]="csv" name="csv" required>
         </div>
@@ -42,12 +42,10 @@ export class LoginComponent {
         },
         error => {
           console.error('Login failed', error);
-          
         }
       );
     } else {
       console.error('CSV cannot be null');
-      
     }
   }
 }

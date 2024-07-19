@@ -45,7 +45,7 @@ export class WithdrawComponent {
     var amountInt = Number(amount);
     this.atmService.withdraw(this.atmProfile?.cardNumber, amountInt).subscribe(
       (newBalance: number) => {// use this to delay before redirecting
-        this.message = `Withdrawal successful. New balance: ${newBalance}`;
+        this.message = `Withdrawal successful. New balance: ${newBalance} $`;
         setTimeout(() => {
           this.router.navigate(['/post-login']);
         }, 2000);

@@ -1,0 +1,69 @@
+/* atm-profile.component.css */
+
+article {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 40px 20px;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+	transition: all var(--transition-duration);
+	text-align: center; /* Center the text */
+  }
+  
+  section {
+	margin-bottom: 30px;
+  }
+  
+  .user-description, .account-description, .card-description {
+	text-align: center; /* Center text within sections */
+  }
+  
+  .user-name {
+	color: var(--primary-color);
+	margin-bottom: 20px;
+	font-size: 2.5em;
+  }
+  
+  .user-id, .account-id, .account-number, .card-number, .account-balance {
+	font-size: 1.2em;
+	color: var(--text-color);
+  }
+  
+  .user-id span, .account-id span, .account-number span, .card-number span {
+	color: var(--primary-color);
+  }
+  
+  .account-balance {
+	font-size: 1.5em; /* Increase the font size */
+	font-weight: bold; /* Make it bold */
+	margin-top: 20px; /* Add some spacing above */
+  }
+  
+  .account-balance strong {
+	color: var(--primary-color); /* Make "Balance:" text red */
+  }
+  
+  .account-balance span {
+	color: var(--text-color); /* Make the actual balance black */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	article {
+	  padding: 20px 10px;
+	}
+  
+	.user-name {
+	  font-size: 2em;
+	}
+  
+	.user-id, .account-id, .account-number, .card-number {
+	  font-size: 1em;
+	}
+  
+	.account-balance {
+	  font-size: 1.2em; /* Adjust balance size for smaller screens */
+	}
+  }
+  

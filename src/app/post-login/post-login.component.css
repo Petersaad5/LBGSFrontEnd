@@ -1,11 +1,57 @@
-/* src/app/post-login/post-login.component.css */
+/* post-login.component.css */
+
+/* Container */
 .post-login-container {
+	max-width: 800px;
+	margin: 50px auto;
+	padding: 60px 40px;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 	text-align: center;
-	margin-top: 50px;
+	transition: all var(--transition-duration);
   }
   
-  button {
-	padding: 10px 20px;
-	font-size: 16px;
+  /* Header */
+  .post-login-container h1 {
+	color: var(--primary-color);
+	margin-bottom: 30px;
+	font-size: 2.5em;
+  }
+  
+  /* Button */
+  .post-login-container button {
+	background-color: var(--primary-color);
+	color: var(--accent-color);
+	border: none;
+	padding: 15px 30px;
+	font-size: 1.3em;
+	margin: 15px 0;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: background-color var(--transition-duration), transform var(--transition-duration);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post-login-container button:hover {
+	background-color: var(--secondary-color);
+	transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.post-login-container {
+	  padding: 30px 20px;
+	}
+  
+	.post-login-container h1 {
+	  font-size: 2em;
+	}
+  
+	.post-login-container button {
+	  width: 100%;
+	  padding: 15px;
+	  font-size: 1em;
+	}
   }
   

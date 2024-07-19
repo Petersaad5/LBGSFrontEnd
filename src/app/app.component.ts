@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   template: `
   <main>
     <header class="brand-name">
-      <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
+      <img class="brand-logo" src="C:\Users\Admin\source\repos\LBGS-Frontend\BankFrontend\public\logo.ico" alt="logo" aria-hidden="true">
     </header>
     <section class="content">
       <router-outlet></router-outlet>

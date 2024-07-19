@@ -1,0 +1,93 @@
+/* login.component.css */
+
+/* Container */
+.login-container {
+	max-width: 600px;
+	margin: 50px auto;
+	padding: 40px 20px;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: all var(--transition-duration);
+  }
+  
+  /* Header */
+  .login-container h2 {
+	color: var(--primary-color);
+	margin-bottom: 20px;
+	font-size: 2.5em;
+  }
+  
+  /* Form Group */
+  .form-group {
+	margin-bottom: 20px;
+	text-align: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  
+  /* Label */
+  .form-group label {
+	display: block;
+	color: var(--text-color);
+	margin-bottom: 5px;
+	font-size: 1.2em;
+	width: 100%;
+  }
+  
+  /* Input */
+  .form-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid var(--primary-color);
+	border-radius: var(--border-radius);
+	font-size: 1.2em;
+	transition: border-color var(--transition-duration);
+  }
+  
+  .form-group input:focus {
+	border-color: var(--secondary-color);
+  }
+  
+  /* Button */
+  .login-container button {
+	background-color: var(--primary-color);
+	color: var(--accent-color);
+	border: none;
+	padding: 15px 30px;
+	font-size: 1.2em;
+	margin: 10px 0;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	transition: background-color var(--transition-duration), transform var(--transition-duration);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-container button:hover {
+	background-color: var(--secondary-color);
+	transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.login-container {
+	  padding: 20px 10px;
+	}
+  
+	.login-container h2 {
+	  font-size: 2em;
+	}
+  
+	.form-group label, .form-group input {
+	  font-size: 1em;
+	}
+  
+	.login-container button {
+	  width: 100%;
+	  padding: 15px;
+	  font-size: 1em;
+	}
+  }
+  

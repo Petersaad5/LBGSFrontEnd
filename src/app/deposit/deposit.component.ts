@@ -44,7 +44,7 @@ export class DepositComponent {
     var amountInt = Number(amount);
     this.atmService.deposit(this.atmProfile?.cardNumber, amountInt).subscribe(
       (newBalance: number) => {// use this to delay before redirecting
-        this.message = `Deposit successful. New balance: ${newBalance}`;
+        this.message = `Deposit successful. New balance: ${newBalance} $`;
         setTimeout(() => {
           this.router.navigate(['/post-login']);
         }, 2000);
