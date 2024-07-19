@@ -10,20 +10,22 @@ import { AuthService } from '../auth.service';
   imports: [CommonModule],
   template: `
     <article>
-      <section class ="user-description">
-        <h2 class= "user-name">{{atmProfile?.userName}}</h2>
-        <p class="user-id">{{atmProfile?.email}}</p>
-        <p class="user-id">{{atmProfile?.userId}}</p>
+      <section class="user-description">
+        <h1 class="user-name">{{atmProfile?.userName}}</h1>
+        <p class="user-id"><strong>Email:</strong> <span>{{atmProfile?.email}}</span></p>
+        <p class="user-id"><strong>User ID:</strong> <span>{{atmProfile?.userId}}</span></p>
       </section>
-      <section class ="account-description">
-        <h2 class= "acccount-number">{{atmProfile?.accountNumber}}</h2>
-        <p class="account-id">{{atmProfile?.accountId}}</p>
+      <section class="account-description">
+        <h2 class="account-number"><strong>Account Number:</strong> <span>{{atmProfile?.accountNumber}}</span></h2>
+        <p class="account-id"><strong>Account ID:</strong> <span>{{atmProfile?.accountId}}</span></p>
       </section>
-      <section class ="card-description">
-        <h2 class= "card-number">{{atmProfile?.cardNumber}}</h2>
-        <h1 class="acount-balance">{{atmProfile?.balance}}</h1>
+      <section class="card-description">
+        <h3 class="card-number"><strong>Card Number:</strong> <span>{{atmProfile?.cardNumber}}</span></h3>
+        <p class="account-balance"><strong>Balance:</strong> <span>{{atmProfile?.balance}}</span></p>
       </section>
-    </article>  
+    </article>
+
+
   `,
   styleUrl: './atm-profile.component.css'
 })

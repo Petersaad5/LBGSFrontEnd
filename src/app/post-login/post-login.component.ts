@@ -4,12 +4,15 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { CommonModule } from '@angular/common';
 import { AtmProfileComponent } from "../atm-profile/atm-profile.component";
+import { AtmService } from '../atm.service';
+import { AtmProfile } from '../atm-profile';
 
 @Component({
   selector: 'app-post-login',
   template: `
     <div class="post-login-container">
-    <app-atm-profile></app-atm-profile>
+    <h1>Welcome, {{atmProfile?.userName}}</h1>
+    <button (click)="checkProfile()">Profile</button>
     <button (click)="logout()">Logout</button>
     </div>
   `,
@@ -19,13 +22,25 @@ import { AtmProfileComponent } from "../atm-profile/atm-profile.component";
 })
 export class PostLoginComponent {
   private authService: AuthService = inject(AuthService);
+  atmService : AtmService = inject(AtmService);
+  atmProfile : AtmProfile | undefined;
   private router: Router = inject(Router);
-  cardNumber: string | undefined;
   constructor() {
-    this.cardNumber = this.authService.getCardNumberFromToken();
+    const cardNumber = String (this.authService.getCardNumberFromToken());
+    this.atmService.getAtmProfile(cardNumber).subscribe(
+      (atmProfile: AtmProfile) => {
+        this.atmProfile = atmProfile;
+      },
+      error => {
+        console.error('Error fetching ATM profile', error);
+      }
+    );
   }
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+  checkProfile(): void {
+    this.router.navigate(['/atm-profile']);
   }
 }
