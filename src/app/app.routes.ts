@@ -7,6 +7,7 @@ import { AtmProfileComponent } from './atm-profile/atm-profile.component';
 import { AuthGuard } from './auth.guard';
 import { WithdrawComponent } from './withdraw/withdraw.component';
 import { DepositComponent } from './deposit/deposit.component';
+import { MoneyTransferComponent } from './money-transfer/money-transfer.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,5 +15,6 @@ export const routes: Routes = [
   { path: 'post-login', component: PostLoginComponent, canActivate: [AuthGuard] },
   { path: 'atm-profile', component: AtmProfileComponent, canActivate: [AuthGuard] },
   { path: 'withdraw/:cardNumber', component: WithdrawComponent, canActivate: [AuthGuard] },
-  { path: 'deposit/:cardNumber', component: DepositComponent, canActivate: [AuthGuard] }
+  { path: 'deposit/:cardNumber', component: DepositComponent, canActivate: [AuthGuard] },
+  {path: 'transfer/:cardNumber', component: MoneyTransferComponent, canActivate: [AuthGuard]}
 ];

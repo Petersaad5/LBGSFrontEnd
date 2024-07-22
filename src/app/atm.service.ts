@@ -9,6 +9,7 @@ import { AtmProfile } from './atm-profile';
 export class AtmService {
   private profileApiUrl = 'https://localhost:7104/api/Atm/GetAtmProfile'; 
   private withdrawOrDepositApiUrl = 'https://localhost:7104/api/Atm/DepositOrWithdraw';
+  private transferApiUrl = 'https://localhost:7104/api/Atm/MoneyTransfer';
 
   constructor(private http: HttpClient) { }
 
@@ -25,5 +26,10 @@ export class AtmService {
     amount = Math.abs(amount) * -1;
     const request = { cardNumber, amount };
     return this.http.put<number>(this.withdrawOrDepositApiUrl, request);
+  }
+  transfer(cardNumber: string | undefined, accountNumber: number, ammount: number): Observable<number> {
+    ammount = Math.abs(ammount);
+    const request = { cardNumber, accountNumber, ammount };
+    return this.http.put<number>(this.transferApiUrl, request); // attention when making api call the field names must match exactly
   }
 }

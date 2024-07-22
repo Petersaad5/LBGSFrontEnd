@@ -13,8 +13,9 @@ import { AtmProfile } from '../atm-profile';
     <div class="post-login-container">
     <h1>Welcome, {{atmProfile?.userName}}</h1>
     <button (click)="checkProfile()">Profile</button>
-    <button (click)="withdraw()">Withdraw</button>
-    <button (click)="deposit()">Deposit</button>
+    <button (click)="withdraw()">Deposit</button>
+    <button (click)="deposit()">Withdraw</button>
+    <button (click)="transfer()">Transfer</button>
     <button (click)="logout()">Logout</button>
     </div>
   `,
@@ -50,5 +51,8 @@ export class PostLoginComponent {
   }
   deposit(): void { 
     this.router.navigate(['/deposit',this.atmProfile?.cardNumber]);
+  }
+  transfer(): void {
+    this.router.navigate(['/transfer',this.atmProfile?.cardNumber]);
   }
 }
