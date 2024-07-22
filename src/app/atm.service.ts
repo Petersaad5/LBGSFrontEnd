@@ -23,7 +23,7 @@ export class AtmService {
     return this.http.put<number>(this.withdrawOrDepositApiUrl, request);
   }
   withdraw(cardNumber: string | undefined, amount: number): Observable<number> {
-    amount = Math.abs(amount) * -1;
+    amount = (Math.abs(amount)) * -1;
     const request = { cardNumber, amount };
     return this.http.put<number>(this.withdrawOrDepositApiUrl, request);
   }

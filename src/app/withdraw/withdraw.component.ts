@@ -10,12 +10,12 @@ import { delay } from 'rxjs';
   imports: [CommonModule],
   template: `
     <section>
-      <h1>Select the amount to Deposit</h1>
+      <h1>Select the amount to Withdraw</h1>
         <p>
           <Strong>Account Balance:{{atmProfile?.balance}} $ </Strong>
         </p>
         <input type="number" #amount placeholder="Enter amount" />
-        <button (click)="withdraw(amount.value)">Deposit</button>
+        <button (click)="withdraw(amount.value)">Withdraw</button>
         <h2>{{message}}</h2>
     </section>
 
@@ -45,14 +45,14 @@ export class WithdrawComponent {
     var amountInt = Number(amount);
     this.atmService.withdraw(this.atmProfile?.cardNumber, amountInt).subscribe(
       (newBalance: number) => {// use this to delay before redirecting
-        this.message = `Deposit successful. New balance: ${newBalance} $`;
+        this.message = `Withdraw successful. New balance: ${newBalance} $`;
         setTimeout(() => {
           this.router.navigate(['/post-login']);
         }, 2000);
       },
       error => {
         this.message = 'Transaction failed, please try again.';
-        console.error('Error during Deposit', error);
+        console.error('Error during Withdrawing ', error);
       }
     );
   }
