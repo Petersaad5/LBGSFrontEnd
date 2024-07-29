@@ -1,0 +1,57 @@
+/* transaction.component.css */
+
+.transaction-container {
+	max-width: 600px;
+	margin: 20px;
+	padding: 20px;
+	background-color: var(--accent-color);
+	border-radius: var(--border-radius);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: all var(--transition-duration);
+	text-align: left;
+  }
+  
+  .transaction-container p {
+	font-size: 1.2em;
+	color: var(--text-color);
+	margin: 10px 0;
+  }
+  
+  .transaction-container p strong {
+	color: var(--primary-color);
+  }
+  
+  /* Transaction Types */
+  .deposit-transaction {
+	border-left: 5px solid var(--primary-color);
+	padding-left: 10px;
+  }
+  
+  .withdrawal-transaction {
+	border-left: 5px solid var(--secondary-color);
+	padding-left: 10px;
+  }
+  
+  .transfer-received-transaction {
+	border-left: 5px solid var(--secondary-color);
+	padding-left: 10px;
+  }
+  
+  .transfer-sent-transaction {
+	border-left: 5px solid var(--primary-color);
+	padding-left: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	.transaction-container {
+	  max-width: 100%;
+	  margin: 10px 0;
+	  padding: 15px;
+	}
+  
+	.transaction-container p {
+	  font-size: 1em;
+	}
+  }
+  

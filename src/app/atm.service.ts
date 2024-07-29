@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AtmProfile } from './atm-profile';
+import { Transaction } from './transaction';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,17 @@ export class AtmService {
   private profileApiUrl = 'https://localhost:7104/api/Atm/GetAtmProfile'; 
   private withdrawOrDepositApiUrl = 'https://localhost:7104/api/Atm/DepositOrWithdraw';
   private transferApiUrl = 'https://localhost:7104/api/Atm/MoneyTransfer';
+  private transactionUrl = 'https://localhost:7104/api/Transaction/GetTransactions';
 
   constructor(private http: HttpClient) { }
 
   getAtmProfile(cardNumber: string): Observable<AtmProfile> {
     const params = new HttpParams().set('CardNumber', cardNumber);
     return this.http.get<AtmProfile>(this.profileApiUrl, { params });
+  }
+  getTransactionsByAccount(accountNumber: number): Observable<Transaction[]> {
+    const params = new HttpParams().set('accountNumber', accountNumber);
+    return this.http.get<Transaction[]>(`${this.transactionUrl}`, { params });
   }
   deposit(cardNumber: string | undefined, amount: number): Observable<number> {
     amount = Math.abs(amount);

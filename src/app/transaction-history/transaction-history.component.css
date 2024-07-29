@@ -1,0 +1,29 @@
+/* transaction-history.component.css */
+
+h1 {
+	text-align: center;
+	color: var(--primary-color);
+	margin-bottom: 20px;
+	font-size: 2.5em;
+  }
+  
+  .results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+	h1 {
+	  font-size: 2em;
+	}
+  
+	.results {
+	  flex-direction: column;
+	  padding: 15px;
+	}
+  }
+  

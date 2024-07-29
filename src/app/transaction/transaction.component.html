@@ -1,0 +1,33 @@
+<div [ngClass]="{
+	'transaction-container': true,
+	'deposit-transaction': transaction.transactionType === 'Deposit',
+	'withdrawal-transaction': transaction.transactionType === 'Withdrawal',
+	'transfer-received-transaction': transaction.transactionType === 'Transfer' && transaction.toAccount === userAccount,
+	'transfer-sent-transaction': transaction.transactionType === 'Transfer' && transaction.fromAccount === userAccount
+  }">
+	<div *ngIf="transaction.transactionType === 'Deposit'">
+	  <p><strong>Deposit Transaction</strong></p>
+	  <p>Amount: {{ transaction.amount }}</p>
+	  <p>To Account: {{ transaction.toAccount }}</p>
+	  <p>Date: {{ getFormattedDate(transaction.date) }}</p>
+	</div>
+	<div *ngIf="transaction.transactionType === 'Withdrawal'">
+	  <p><strong>Withdrawal Transaction</strong></p>
+	  <p>Amount: {{ transaction.amount }}</p>
+	  <p>From Account: {{ transaction.fromAccount }}</p>
+	  <p>Date: {{ getFormattedDate(transaction.date) }}</p>
+	</div>
+	<div *ngIf="transaction.transactionType === 'Transfer' && transaction.toAccount === userAccount">
+	  <p><strong>Transfer Transaction (Received)</strong></p>
+	  <p>Amount: {{ transaction.amount }}</p>
+	  <p>From Account: {{ transaction.fromAccount }}</p>
+	  <p>Date: {{ getFormattedDate(transaction.date) }}</p>
+	</div>
+	<div *ngIf="transaction.transactionType === 'Transfer' && transaction.fromAccount === userAccount">
+	  <p><strong>Transfer Transaction (Sent)</strong></p>
+	  <p>Amount: {{ transaction.amount }}</p>
+	  <p>To Account: {{ transaction.toAccount }}</p>
+	  <p>Date: {{ getFormattedDate(transaction.date) }}</p>
+	</div>
+  </div>
+  
